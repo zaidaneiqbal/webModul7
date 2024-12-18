@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 400px;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.3s ease;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        .save-btn,
+        .cancel-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .save-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .cancel-btn {
+            background-color: #ffc107;
+            color: #fff;
+        }
+        .resume {
+            margin-top: 20px;
+            width: 80%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Form Pemesanan</h2>
+        <form id="formPemesanan">
+            <label for="namaPemesan">Nama Pemesan:</label>
+            <input type="text" id="namaPemesan" name="namaPemesan" placeholder="Masukkan nama Anda">
+
+            <label for="nomorIdentitas">Nomor Identitas:</label>
+            <input type="text" id="nomorIdentitas" name="nomorIdentitas" placeholder="Masukkan nomor identitas">
+
+            <label for="jenisKelamin">Jenis Kelamin:</label>
+            <select id="jenisKelamin" name="jenisKelamin">
+                <option value="">--Pilih Jenis Kelamin--</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+
+            <label for="tipeKamar">Tipe Kamar:</label>
+            <select id="tipeKamar" name="tipeKamar">
+                <option value="">--Pilih Tipe Kamar--</option>
+                <option value="Standard">Standard</option>
+                <option value="Deluxe">Deluxe</option>
+                <option value="Family">Family</option>
+            </select>
+
+            <label for="tanggalPesan">Tanggal Pesan:</label>
+            <input type="date" id="tanggalPesan" name="tanggalPesan">
+
+            <label for="durasiMenginap">Durasi Menginap (Hari):</label>
+            <input type="number" id="durasiMenginap" name="durasiMenginap" min="1" placeholder="Jumlah hari menginap">
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="termasukBreakfast" name="termasukBreakfast">
+                Termasuk Sarapan
+            </label>
+
+            <div class="buttons">
+                <button type="button" class="save-btn" id="btnSimpan">Simpan</button>
+                <button type="reset" class="cancel-btn">Batal</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#btnSimpan').click(function() {
+                const namaPemesan = $('#namaPemesan').val();
+                const nomorIdentitas = $('#nomorIdentitas').val();
+                const jenisKelamin = $('#jenisKelamin').val();
+                const tipeKamar = $('#tipeKamar').val();
+                const tanggalPesan = $('#tanggalPesan').val();
+                const durasiMenginap = $('#durasiMenginap').val();
+                const termasukBreakfast = $('#termasukBreakfast').is(':checked');
+
+                if (!/^[0-9]{16}$/.test(nomorIdentitas)) {
+                    alert("Isi nomor identitas harus 16 digit");
+                    return;
+                }
+
+                let hargaPerMalam = 0;
+                if (tipeKamar === "Standard") hargaPerMalam = 500000;
+                else if (tipeKamar === "Deluxe") hargaPerMalam = 750000;
+                else if (tipeKamar === "Family") hargaPerMalam = 1000000;
+
+                if (termasukBreakfast) {
+                    hargaPerMalam += 80000;
+                }
+
+                const totalBayar = hargaPerMalam * durasiMenginap;
+                const diskon = durasiMenginap > 3 ? "10%" : "0%";
+                const totalSetelahDiskon = durasiMenginap > 3 ? totalBayar * 0.9 : totalBayar;
+
+                const queryParams = new URLSearchParams({
+                    namaPemesan,
+                    nomorIdentitas,
+                    jenisKelamin,
+                    tipeKamar,
+                    tanggalPesan,
+                    durasiMenginap,
+                    diskon,
+                    totalBayar: totalSetelahDiskon
+                });
+
+                window.open(`resume.html?${queryParams.toString()}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

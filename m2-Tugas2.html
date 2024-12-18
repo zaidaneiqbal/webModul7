@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Kamar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container {
+            width: 450px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            resize: vertical;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .save-btn,
+        .cancel-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .cancel-btn {
+            background-color: #ffc107;
+            color: #fff;
+        }
+
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cancel-btn:hover {
+            background-color: #e0a800;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Data Kamar</h2>
+        <form>
+            <label for="idKamar">ID Kamar:</label>
+            <input type="text" id="idKamar" name="idKamar" placeholder="Masukkan ID kamar">
+
+            <label for="gambarRuangan">Gambar Ruangan:</label>
+            <input type="file" id="gambarRuangan" name="gambarRuangan" accept="image/*">
+
+            <label for="jenisKamar">Jenis Kamar:</label>
+            <input type="text" id="jenisKamar" name="jenisKamar" placeholder="Masukkan jenis kamar">
+
+            <label for="hargaKamar">Harga:</label>
+            <input type="number" id="hargaKamar" name="hargaKamar" placeholder="Masukkan harga kamar">
+
+            <label for="fasilitasKamar">Fasilitas:</label>
+            <textarea id="fasilitasKamar" name="fasilitasKamar" placeholder="Masukkan fasilitas kamar"></textarea>
+
+            <div class="buttons">
+                <button type="submit" class="save-btn">Simpan</button>
+                <button type="reset" class="cancel-btn">Batal</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

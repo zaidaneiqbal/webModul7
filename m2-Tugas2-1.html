@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fasilitas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container {
+            width: 450px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="time"],
+        textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            resize: vertical;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .save-btn,
+        .cancel-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .cancel-btn {
+            background-color: #ffc107;
+            color: #fff;
+        }
+
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cancel-btn:hover {
+            background-color: #e0a800;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Fasilitas</h2>
+        <form>
+            <label for="idFasilitas">ID Fasilitas:</label>
+            <input type="text" id="idFasilitas" name="idFasilitas" placeholder="Masukkan ID fasilitas">
+
+            <label for="namaFasilitas">Nama Fasilitas:</label>
+            <input type="text" id="namaFasilitas" name="namaFasilitas" placeholder="Masukkan nama fasilitas">
+
+            <label for="fasilitasDeskripsi">Deskripsi Fasilitas:</label>
+            <textarea id="fasilitasDeskripsi" name="fasilitasDeskripsi" placeholder="Deskripsikan fasilitas"></textarea>
+
+            <label for="hargaWeekend">Harga Weekend:</label>
+            <input type="number" id="hargaWeekend" name="hargaWeekend" placeholder="Masukkan harga weekend">
+
+            <label for="hargaWeekday">Harga Weekday:</label>
+            <input type="number" id="hargaWeekday" name="hargaWeekday" placeholder="Masukkan harga weekday">
+
+            <label for="kuota">Kuota:</label>
+            <input type="number" id="kuota" name="kuota" placeholder="Masukkan kuota">
+
+            <label for="jamBuka">Jam Buka:</label>
+            <input type="time" id="jamBuka" name="jamBuka">
+
+            <label for="jamTutup">Jam Tutup:</label>
+            <input type="time" id="jamTutup" name="jamTutup">
+
+            <div class="buttons">
+                <button type="submit" class="save-btn">Simpan</button>
+                <button type="reset" class="cancel-btn">Batal</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

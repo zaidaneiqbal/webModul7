@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        header {
+            background-image: url('../images/Foto02.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            position: relative;
+        }
+        header h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #FFD700;
+            margin: 15px auto 0;
+        }
+        .video-container iframe {
+            aspect-ratio: 16/9;
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="text-center py-5">
+        <h1>BEST HOTEL</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Best Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kamar">Kamar</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#fasilitas" id="fasilitasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fasilitas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#petualangan-alam">Petualangan Alam</a></li>
+                            <li><a class="dropdown-item" href="#kolam-renang">Kolam Renang</a></li>
+                            <li><a class="dropdown-item" href="#sumber-air-panas">Sumber Air Panas</a></li>
+                            <li><a class="dropdown-item" href="#pusat-kebugaran">Pusat Kebugaran</a></li>
+                            <li><a class="dropdown-item" href="#ruang-rapat">Ruang Rapat</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#pesan-sekarang">Pesan Sekarang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="video-container mb-3">
+                    <iframe src="https://www.youtube.com/embed/BFS9n4B_2xA" title="Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="video-container mb-3">
+                    <iframe src="https://www.youtube.com/embed/UJiVARkYs0c" title="Video 2" allowfullscreen></iframe>
+                </div>
+                <div class="video-container mb-3">
+                    <iframe src="https://www.youtube.com/embed/L5BaNnufU1I" title="Video 3" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar01.webp" alt="Foto Kamar 1">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar02.jpg" alt="Foto Kamar 2">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar03.avif" alt="Foto Kamar 3">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar04.avif" alt="Foto Kamar 4">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar05.jpg" alt="Foto Kamar 5">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar06.jpg" alt="Foto Kamar 6">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar07.jpeg" alt="Foto Kamar 7">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar08.jpg" alt="Foto Kamar 8">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid rounded" src="../images/Kamar09.jpg" alt="Foto Kamar 9">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2024 Queen Best Hotel | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

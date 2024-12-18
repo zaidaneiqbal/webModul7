@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Hotel</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-image: url('images/Foto02.webp'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text readability */
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em; /* Make the text larger */
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Adds a subtle shadow */
+            z-index: 2;
+            position: relative;
+        }
+
+        header h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #FFD700; /* Gold underline for a luxury look */
+            margin: 15px auto 0;
+            z-index: 2;
+        }
+        
+        /* Navbar styling */
+        nav {
+            background: linear-gradient(135deg, #333, #555); /* Gradient background for depth */
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-weight: bold;
+            transition: all 0.3s ease; /* Smooth transition */
+            border-radius: 4px; /* Slightly rounded corners */
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 215, 0, 0.3); /* Golden highlight on hover */
+            color: #ffd700;
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Dropdown shadow */
+            z-index: 1000;
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            white-space: nowrap;
+        }
+
+        nav ul li ul li a {
+            padding: 8px 15px;
+            color: #f0f0f0;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #575757;
+            color: #ffd700;
+        }
+
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+            margin-left: 10px;
+            border-radius: 8px;
+        }
+        
+        /* Container Styling */
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background-color: #444;
+        }
+        .left-panel {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .left-panel iframe {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+        }
+        .right-panel {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .right-panel img {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: linear-gradient(135deg, #333, #555); /* Gradient background for a rich look */
+            color: #f0f0f0;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1em;
+            border-top: 2px solid #ffd700; /* Golden top border for luxury touch */
+            position: relative;
+        }
+        footer p {
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        footer p, .social-icons {
+            z-index: 2;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Soft overlay for a polished look */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BEST HOTEL</h1>
+    </header>
+
+    <!-- Navbar with dropdowns -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#kamar">Kamar</a></li>
+            <li>
+                <a href="#fasilitas">Fasilitas</a>
+                <ul class="dropdown">
+                    <li><a href="#petualangan-alam">Petualangan Alam</a></li>
+                    <li>
+                        <a href="#kolam-renang">Kolam Renang</a>
+                        <ul class="dropdown">
+                            <li><a href="#kolam-renang-dewasa">Kolam Renang Dewasa</a></li>
+                            <li><a href="#kolam-renang-anak">Kolam Renang Anak</a></li>
+                            <li>
+                                <a href="#jenis-kolam-anak-dewasa">Jenis Kolam</a>
+                                <ul class="dropdown">
+                                    <li><a href="#kolam-reguler">Reguler</a></li>
+                                    <li><a href="#kolam-premium">Premium</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#sumber-air-panas">Sumber Air Panas</a></li>
+                    <li><a href="#pusat-kebugaran">Pusat Kebugaran</a></li>
+                    <li><a href="#ruang-rapat">Ruang Rapat</a></li>
+                </ul>
+            </li>
+            <li><a href="#pesan-sekarang">Pesan Sekarang</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content with videos and images -->
+    <div class="container">
+        <div class="left-panel">
+            <iframe src="https://www.youtube.com/embed/BFS9n4B_2xA" title="Video 1" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/UJiVARkYs0c" title="Video 2" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/L5BaNnufU1I" title="Video 3" allowfullscreen></iframe>
+        </div>
+        <div class="right-panel">
+            <img src="images/Kamar01.webp" alt="Foto Kamar 1">
+            <img src="images/Kamar02.jpg" alt="Foto Kamar 2">
+            <img src="images/Kamar03.avif" alt="Foto kamar 3">
+            <img src="images/Kamar04.avif" alt="Foto Kamar 4">
+            <img src="images/Kamar05.jpg" alt="Foto kamar 5">
+            <img src="images/Kamar06.jpg" alt="Foto Kamar 6">
+            <img src="images/Kamar07.jpeg" alt="Foto Kamar 7">
+            <img src="images/Kamar08.jpg" alt="Foto Kamar 8">
+            <img src="images/Kamar09.jpg" alt="Foto Kamar 9">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Queen Best Hotel | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
